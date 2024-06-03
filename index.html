@@ -9,50 +9,67 @@
 </head>
 
 
-<body class="container">
+<body class="justify-content-center">
 
   
-<form>
-<h4 class="pt-4">The Car Shop</h4>
 
-<div id="car_list" class="row bg-primary-subtle border rounded-3">
- 
+<h4 class="pt-4">The Car Shop</h4>
+<form>
+<div  id="car_list" class="container row d-flex justify-content-center">
+
+  <!-- <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-2">Col One</div>
+      <div class="col-sm-12 col-md-6 col-lg-8">Col Two</div>
+  </div>
+
+  <div class="row">
+      <div class="col-sm-6 order-sm-2">Col One</div>
+      <div class="col-sm-6 order-sm-1">Col Two</div>
+  </div>
+
+  <div class="row">
+      <div class="col-sm-4 offset-2">Col One</div>
+      <div class="col-sm-4 offset-1">Col Two</div>
+  </div> -->
+
+  
+  
 </div>
 
+
+<div class="submitForm">
 <h4 class="pt-5 ">Add/Update Car</h4>
 <div>
   <label for="idUpdate" class="form-label">Id</label>
-  <input type="text" class="form-control w-25"  id="idUpdate">
+  <input type="text" class="form-control w-50"  id="idUpdate">
 </div>
 <div>
     <label for="makeUpdate">Make</label>
-    <input type="text" class="form-control w-25" id="makeUpdate">
+    <input type="text" class="form-control w-50" id="makeUpdate">
 </div>
 <div>
     <label for="modelUpdate">Model</label>
-    <input type="text" class="form-control w-25"  id="modelUpdate">
+    <input type="text" class="form-control w-50"  id="modelUpdate">
 </div>
 <div>
     <label for="mileageUpdate">Miles</label>
-    <input type="text" class="form-control w-25" id="mileageUpdate">
+    <input type="text" class="form-control w-50" id="mileageUpdate">
 </div>
 <div>
     <label for="priceUpdate">Price</label>
-    <input type="text" class="form-control w-25"  id="priceUpdate">
+    <input type="text" class="form-control w-50"  id="priceUpdate">
 </div>
 <div>
     <label for="yearUpdate">Year</label>
-    <input type="text" class="form-control w-25" id="yearUpdate">
+    <input type="text" class="form-control w-50" id="yearUpdate">
     <bR><br><button  onclick="updateCar()">Update</button>   <button id="btn" onclick="addCar()">Add Car</button>
+      <bR><bR><bR><bR><bR></div>
+</form>
+
 </div>
-</form>
 
 
 
-
-
-
-</form>
     <!-- Jquery CDN  -->
     <script
       src="https://code.jquery.com/jquery-3.6.3.min.js"
