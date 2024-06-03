@@ -1,28 +1,36 @@
 
+//This is the API url for created on a local json server
 const url = 'http://localhost:3000/cars'
 
-
-$.get(url).then((data) =>
-    data.map((car) => {
-        $('#car_list').append(
-            $(`           
-                     <div class="col p-3 border bg-light">
-                        <div><span>${car.id}</span> <img alt="${car.model}" src="car.png" width="150px"/></div>
-                        <span>${car.make}</span> 
-                        <span>${car.model}</span> <br> 
-                        <span>Miles: ${car.mileage}</span>  
-                        <span>Year: ${car.year}</span><br>  
-                        <span>Price: $${car.price}</span>  
-                        <button onclick="deleteCar(${car.id})"}>🗑</button>
-                    </div>      
-                            
-            `)
-        )
-    })
-)
+//Main jquery .get call to get the cars that exist in the car shop.
 
 
 
+
+    $.get(url).then((data) =>
+        data.map((car) => {
+            $('#car_list').append(
+                $(`           
+                         <div class="col p-3 border bg-light">
+                            <div><span>${car.id}</span> <img alt="${car.year} ${car.model}" src="car.png" width="150px"/></div>
+                            <span>${car.make}</span> 
+                            <span>${car.model}</span> <br> 
+                            <span>Miles: ${car.mileage}</span>  
+                            <span>Year: ${car.year}</span><br>  
+                            <span>Price: $${car.price}</span>  
+                            <button onclick="deleteCar(${car.id})"}>🗑</button>
+                        </div>      
+                                
+                `)
+            )
+        })
+    )
+
+
+
+
+
+//this is a fetch call to delete the selected can
 
 function deleteCar(id) {
 
@@ -31,6 +39,8 @@ function deleteCar(id) {
     })
 
 }
+
+//POST ajax call to add new cars. Checks if there is content in the id field.
 
 
 function addCar() {
@@ -65,13 +75,7 @@ function addCar() {
                 "price": $('#priceUpdate').val()
             }),
             headers: { "Content-type": "application/json; charset=UTF-8" } // access in body
-        }).done(function () {
-            console.log('SUCCESS');
-        }).fail(function (msg) {
-            console.log('FAIL');
-        }).always(function (msg) {
-            console.log('ALWAYS');
-        });
+        })
     } else {
         alert("Please enter some information.")
     }
@@ -79,7 +83,7 @@ function addCar() {
 }
 
 
-
+//PUT ajax call to add update existing cars. Checks if there is content in the id field.
 
 function updateCar() {
 
@@ -119,14 +123,8 @@ function updateCar() {
                 "mileage": $('#mileageUpdate').val(),
                 "year": $('#yearUpdate').val(),
                 "price": $('#priceUpdate').val()
-            }), // access in body
-        }).done(function () {
-            console.log('SUCCESS');
-        }).fail(function (msg) {
-            console.log('FAIL');
-        }).always(function (msg) {
-            console.log('ALWAYS');
-        });
+            }), 
+        })
     }
     else {
         alert("Please enter some information.")
